@@ -1,0 +1,3 @@
+[submodule "diccionarios"]
+	path = diccionarios
+	url = https://github.com/hackingyseguridad/diccionarios
