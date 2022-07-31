@@ -76,7 +76,24 @@ function clear_dictionary() {
   file_put_contents('diccionarios/diccionario.txt', $palabras);
 }
 
-$op = $argv[1];
+function help() {
+  echo "Operations: get, list, build-index, clear-dictionary\n";
+  echo "\n";
+  echo "- get <word> (gets anagramas for a given word)\n";
+  echo "- list (list all anagramas\n";
+  echo "- build-index (builds an index of all anagramas)\n";
+  echo "- clear-dictionary (internal use)\n";
+  echo "\n";
+  echo "Usage: php busca_anagramas.php <operation> [arguments]\n";
+}
+
+if (isset($argv[1])) {
+  $op = $argv[1];
+}
+else {
+  help();
+  exit;
+}
 
 switch($op) {
   case 'get':
